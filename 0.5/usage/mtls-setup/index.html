@@ -1204,7 +1204,7 @@
         
   
   <span class="md-ellipsis">
-    Ankaios Configuration Files
+    Configuration files
   </span>
   
 
@@ -1833,16 +1833,17 @@
 <h3 id="install-ank-server-and-ank-agent-with-mtls-certificates">Install <code>ank-server</code> and <code>ank-agent</code> with mTLS certificates<a class="headerlink" href="#install-ank-server-and-ank-agent-with-mtls-certificates" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://github.com/eclipse-ankaios/ankaios/releases/latest/download/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
 </code></pre></div>
-<p>To use the CA, certificate and key for the server, add the following lines to <code>/etc/ankaios/ank-server.conf</code>:</p>
+<p>To use the CA, certificate and key for the server, add the following lines to <code>/etc/ankaios/ank-server.conf</code> and set the <code>insecure</code> flag inside it to <code>false</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">ca_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/etc/ankaios/certs/ca.pem&#39;</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">crt_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/etc/ankaios/certs/ank-server.pem&#39;</span>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">key_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/etc/ankaios/certs/ank-server-key.pem&#39;</span>
 </code></pre></div>
-<p>For the agent add the following lines to <code>/etc/ankaios/ank-agent.conf</code>:</p>
+<p>For the agent add the following lines to <code>/etc/ankaios/ank-agent.conf</code> and set the <code>insecure</code> flag inside it to <code>false</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">ca_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/etc/ankaios/certs/ca.pem&#39;</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">crt_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/etc/ankaios/certs/ank-agent.pem&#39;</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">key_pem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/etc/ankaios/certs/ank-agent-key.pem&#39;</span>
 </code></pre></div>
+<p>For more information on how the server, agent and CLI can be configured please consult <a href="../../reference/config-files/">configuration files</a>.</p>
 <p>Start the Ankaios server and an Ankaios agent as described in the <a href="../quickstart/">Quickstart</a> and continue below to configure the CLI with mTLS.</p>
 <h3 id="configure-the-ank-cli-with-mtls-certificates">Configure the <code>ank</code> CLI with mTLS certificates<a class="headerlink" href="#configure-the-ank-cli-with-mtls-certificates" title="Permanent link">&para;</a></h3>
 <p>To make it easier, we will set the mTLS certificates for the <code>ank</code> CLI by using environment variables:</p>
