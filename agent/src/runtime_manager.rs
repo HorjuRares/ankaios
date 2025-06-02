@@ -1549,9 +1549,6 @@ mod tests {
         runtime_manager
             .add_workload(ReusableWorkloadSpec::new(workload_spec_has_access, None))
             .await;
-
-        // server_receiver.close();
-        // let _ = wl_state_receiver.recv().await;
     }
 
     // [utest->swdd~agent-existing-workloads-replace-updated~4]
