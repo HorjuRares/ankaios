@@ -674,7 +674,7 @@ mod tests {
         self, generate_test_control_interface_access,
         generate_test_workload_spec_with_control_interface_access,
         generate_test_workload_spec_with_dependencies, generate_test_workload_spec_with_param,
-        AddCondition, ExecutionStateEnum, WorkloadInstanceNameBuilder, WorkloadState,
+        AddCondition, WorkloadInstanceNameBuilder, WorkloadState,
     };
     use common::test_utils::{
         self, generate_test_complete_state, generate_test_deleted_workload,

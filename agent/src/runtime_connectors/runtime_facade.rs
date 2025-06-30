@@ -22,7 +22,10 @@ use common::{
 };
 
 #[cfg(test)]
-use mockall::{automock, mock};
+use crate::runtime_connectors::dummy_state_checker::DummyStateChecker;
+
+#[cfg(test)]
+use mockall::automock;
 
 #[cfg_attr(test, mockall_double::double)]
 use crate::control_interface::ControlInterface;
@@ -34,10 +37,7 @@ use crate::control_interface::control_interface_info::ControlInterfaceInfo;
 use crate::io_utils::filesystem_async;
 
 use crate::{
-    runtime_connectors::{
-        dummy_state_checker::DummyStateChecker, OwnableRuntime, ReusableWorkloadState,
-        RuntimeError, StateChecker,
-    },
+    runtime_connectors::{OwnableRuntime, ReusableWorkloadState, RuntimeError, StateChecker},
     workload_operation::ReusableWorkloadSpec,
     workload_state::{WorkloadStateSender, WorkloadStateSenderInterface},
 };
