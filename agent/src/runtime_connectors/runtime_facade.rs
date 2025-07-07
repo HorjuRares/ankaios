@@ -417,7 +417,7 @@ impl<
 #[cfg(test)]
 mockall::mock! {
     pub GenericRuntimeFacade {
-        pub fn new(runtime: Box<dyn OwnableRuntime<String, DummyStateChecker>>,
+        pub fn new(runtime: Box<dyn OwnableRuntime<String, DummyStateChecker<String>>>,
             run_folder: PathBuf) -> Self;
     }
 
@@ -448,21 +448,7 @@ mockall::mock! {
             update_state_tx: &WorkloadStateSender,
         );
     }
-
-    // impl Drop for Fifo {
-    //     fn drop(&mut self);
-    // }
 }
-
-// #[cfg(test)]
-// mock! {
-//     pub GenericRuntimeFacade {
-//         pub fn new(
-//             runtime: Box<dyn OwnableRuntime<WorkloadId, StChecker>>,
-//             run_folder: PathBuf,
-//         ) -> Self;
-//     }
-// }
 
 //////////////////////////////////////////////////////////////////////////////
 //                 ########  #######    #########  #########                //
