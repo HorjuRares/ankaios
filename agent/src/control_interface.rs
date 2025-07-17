@@ -124,6 +124,7 @@ impl ControlInterface {
 
     pub fn get_input_pipe_sender(&self) -> &FromServerSender {
         &self.input_pipe_sender
+
     }
 
     pub fn abort_control_interface_task(&self) {

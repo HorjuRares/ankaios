@@ -52,6 +52,7 @@ pub struct ControlInterfaceTask {
     input_stream: InputPipe,
     from_server_receiver: FromServerReceiver,
     to_server_sender: ToServerSender,
+
     request_id_prefix: String,
     authorizer: Arc<Authorizer>,
 }
@@ -63,6 +64,7 @@ impl ControlInterfaceTask {
         input_stream: InputPipe,
         from_server_receiver: FromServerReceiver,
         to_server_sender: ToServerSender,
+
         request_id_prefix: String,
         authorizer: Arc<Authorizer>,
     ) -> Self {
@@ -107,6 +109,7 @@ impl ControlInterfaceTask {
             select! {
                 // [impl->swdd~agent-ensures-control-interface-input-pipe-read~1]
                 from_server = self.from_server_receiver.recv() => {
+
                     if let Some(FromServer::Response(response)) = from_server {
                         let forward_result = self.forward_from_server(response).await;
                         if let Err(DeliveryError::NoReader(response)) = forward_result {
@@ -268,6 +271,7 @@ mod tests {
         control_interface_task::INITIAL_HELLO_MISSING_MSG,
         input_pipe::MockInputPipe,
         output_pipe::{MockOutputPipe, OutputPipeError},
+
     };
 
     const REQUEST_ID: &str = "req_id";
@@ -329,6 +333,7 @@ mod tests {
 
         let input_stream_mock = MockInputPipe::default();
         let (_, from_server_receiver) = mpsc::channel(1);
+
         let (output_pipe_sender, _) = mpsc::channel(1);
         let request_id_prefix = String::from("prefix@");
 

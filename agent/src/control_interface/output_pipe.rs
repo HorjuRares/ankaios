@@ -108,6 +108,7 @@ impl OutputPipe {
     fn ensure_file(&mut self) -> io::Result<&mut Sender> {
         if self.file.is_none() {
             log::debug!("Attempting to reopen the output pipe at {:?}", self.path);
+
             self.file = Some(OpenOptions::new().open_sender(&self.path)?);
         }
 
