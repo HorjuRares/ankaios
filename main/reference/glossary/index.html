@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/favicon128x128.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
@@ -1233,6 +1233,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#containerd-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Containerd container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#native-workload" class="md-nav__link">
     <span class="md-ellipsis">
       Native workload
@@ -1746,6 +1755,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#containerd-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Containerd container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#native-workload" class="md-nav__link">
     <span class="md-ellipsis">
       Native workload
@@ -1785,11 +1803,13 @@
 <h2 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">&para;</a></h2>
 <p>The base an which a workload can be started. For OCI container this is a container runtime or engine. For native applications the runtime is the OS itself.</p>
 <h2 id="workload">Workload<a class="headerlink" href="#workload" title="Permanent link">&para;</a></h2>
-<p>A functionality that the Ankaios orchestrator can manage (e.g. start, stop). A workload could be packed inside an OCI <a href="#container">container</a> (e.g. <a href="#podman-container">Podman container</a>) or could also be just a native program (<a href="#native-workload">native workload</a>). Ankaios is build to be extensible for different workload types by adding support for other <a href="#runtime">runtimes</a>.</p>
+<p>A functionality that the Ankaios orchestrator can manage (e.g. start, stop). A workload could be packed inside an OCI <a href="#container">container</a> (e.g. <a href="#podman-container">Podman container</a> or <a href="#containerd-container">Containerd container</a>) or could also be just a native program (<a href="#native-workload">native workload</a>). Ankaios is build to be extensible for different workload types by adding support for other <a href="#runtime">runtimes</a>.</p>
 <h2 id="container">Container<a class="headerlink" href="#container" title="Permanent link">&para;</a></h2>
 <p>A container is a lightweight, standalone, executable software package that includes everything needed to run an application, including the binaries, runtime, system libraries and dependencies. Containers provide a consistent and isolated environment for applications to run, ensuring that they behave consistently across different computing environments, from development to testing to production.</p>
 <h2 id="podman-container">Podman container<a class="headerlink" href="#podman-container" title="Permanent link">&para;</a></h2>
 <p>A Podman container refers to a <a href="#container">container</a> managed by <a href="https://docs.podman.io/en/latest/">Podman</a>, which is an open-source container engine similar to Docker. <a href="https://docs.podman.io/en/latest/">Podman</a> aims to provide a simple and secure container management solution for developers and system administrators.</p>
+<h2 id="containerd-container">Containerd container<a class="headerlink" href="#containerd-container" title="Permanent link">&para;</a></h2>
+<p>A Containerd container refers to a <a href="#container">container</a> managed by <a href="https://github.com/containerd/containerd">Containerd</a>, which is an open-source daemon-based container engine.</p>
 <h2 id="native-workload">Native workload<a class="headerlink" href="#native-workload" title="Permanent link">&para;</a></h2>
 <p>An application developed specifically for a particular platform or operating system (OS). It is designed to run directly on the target platform without the need for bringing in any additional translation or emulation layers.</p>
 
@@ -1912,10 +1932,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "content.code.copy", "content.code.annotate", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.tabs", "content.code.copy", "content.code.annotate", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
